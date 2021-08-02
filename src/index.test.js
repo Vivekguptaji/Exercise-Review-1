@@ -1,6 +1,6 @@
 import fetchMock from "jest-fetch-mock";
 
-const url = "https://610417013356ea001748f699.mockapi.io/Temp";
+const url = "https://5dc588200bbd050014fb8ae1.mockapi.io/assessment";
 const APIRequest = function () {
   return fetch(url).then((res) => res.json());
 };
@@ -12,9 +12,9 @@ describe("Testing API", () => {
   it("Mock API call", () => {
     fetchMock.mockResponseOnce(
       JSON.stringify({
-        createdAt: "2021-07-31T04:04:38.538Z",
-        name: "Edgar Reichert",
-        avatar: "https://cdn.fakercloud.com/avatars/svenlen_128.jpg",
+        createdAt: "2021-03-31T13:24:14.020Z",
+        name: "Ryann Wiegand",
+        avatar: "https://s3.amazonaws.com/uifaces/faces/twitter/daykiine/128.jpg",
         id: "1",
       })
     );
