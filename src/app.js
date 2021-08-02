@@ -10,13 +10,11 @@
         day: "numeric",
       },
     },
-
     loadingEl: document.getElementsByClassName("loading")[0],
     renderUI: function (data) {
       this.loadingEl.classList.remove("loading");
       let mainTemplateHTML = document.getElementById("main_section").innerHTML;
       let template = Handlebars.compile(mainTemplateHTML);
-
       data.map((item) => {
         item.createdOn = new Date(item.createdAt).toLocaleDateString(
           "en-US",
