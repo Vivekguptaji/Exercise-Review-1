@@ -1,0 +1,33 @@
+<html>
+<head>
+	<title>List App</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+	<link href="./css/main.css" rel="stylesheet"> </link>
+	<script src="./src/lib/handlebars.js" ></script>
+	<script src="./src/app.js" defer type="module" ></script>
+</head>
+<body>
+	<article class="leaderboard">
+		<main>
+			<div id="main" class="loading">Loading Users...</div>
+			<script type="text/x-handlebars-template" id="main_section">
+				<ul class="leaderboard__profiles"> {{#each this}}
+					<li>
+						<article class="leaderboard__profile"> <img src="{{avatar}}" alt=" {{name}}" class="leaderboard__picture"> <span class="leaderboard__name"> {{name}} 
+                    <br><span class="leaderboard__value hide_details">Id: {{id}} & Created On: {{createdOn}}</span>
+							<br> </span>
+							<button onclick="{onListBtnClick(this)}">Show Details</button>
+						</article>
+					</li> {{/each}} </ul>
+			</script>
+			<script>
+			onListBtnClick = function(e) {
+				let el = e.parentNode.querySelector('.leaderboard__value');
+				el && el.classList.toggle("hide_details");
+				e.innerText = e.innerText === 'Show Details' ? 'Hide Details' : 'Show Details';
+			}
+			</script>
+		</main>
+	</article>
+</body>
+</html>

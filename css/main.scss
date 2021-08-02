@@ -1,0 +1,118 @@
+@import "common";
+
+.loading {
+  @include default_layout();
+  font-size: $font_size + 15px;
+  color: $text_color;
+}
+.loading_err {
+  @include default_layout();
+  font-size: $font_size;
+  color: #b33737;
+  text-align: center;
+}
+
+li {
+  list-style: none;
+  padding: 10px;
+  button {
+    padding: 6px;
+    margin-bottom: 40px;
+    font-family: inherit;
+    cursor: pointer;
+    font-size: $font_size - 2px;
+    width: 110px;
+    outline: none;
+    border-radius: 3 * $button-b;
+    background: $normal_color;
+    color: $text_color;
+    border: 1px solid $btn_border;
+    &:hover {
+      background: $btn_border;
+      color: $normal_color;
+    }
+  }
+}
+.leaderboard {
+  max-width: 590px;
+  width: 100%;
+  border-radius: 12px;
+
+  &__profiles {
+    background-color: $normal_color;
+    border-radius: 12px;
+    padding: 15px 15px 20px;
+    display: flex;
+    flex-flow: column;
+  }
+
+  &__profile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px 10px 10px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 1px 2px 4px 0px rgba(0, 0, 0, 0.5);
+    transition: transform 0.25s cubic-bezier(0.7, 0.98, 0.86, 0.98),
+      box-shadow 0.25s cubic-bezier(0.7, 0.98, 0.86, 0.98);
+    background-color: $normal_color;
+  }
+
+  &__picture {
+    max-width: 100%;
+    width: 60px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 10px #ebeef3, 0 0 0 22px #f3f4f6;
+  }
+
+  &__name {
+    color: $text_color;
+    font-weight: 600;
+    font-size: $font_size + 2px;
+    letter-spacing: 0.64px;
+    font-family: inherit;
+    margin-left: 12px;
+    width: 250px;
+    height: 70px;
+  }
+
+  &__value {
+    color: #909090;
+    font-size: $font_size - 5px;
+    position: relative;
+    top: 10px;
+  }
+}
+
+.hide_details {
+  display: none;
+}
+
+@media (max-width: 500px) {
+  .loading {
+    font-size: $font_size + 2px;
+  }
+
+  li {
+    padding: 0px 0px 12px;
+  }
+  .leaderboard {
+    &__picture {
+      max-width: 50%;
+    }
+    &__name {
+      font-size: $font_size - 6px;
+      padding-left: 17px;
+    }
+    &__value {
+      font-size: $font_size -6px;
+    }
+    &__profile {
+      padding: 5px;
+    }
+    button {
+      width: 100px;
+    }
+  }
+}

@@ -1,0 +1,50 @@
+$button-b: 0.125em;
+$button-h: 2em;
+$btn_color: #888;
+$btn_border: #6d6d6d;
+$main_Body_Bcg: #d8d8d8;
+$font_family: sans-serif;
+$text_color: #979cb0;
+$font_size: 18px;
+$normal_color: #fff;
+
+body {
+  margin: 0;
+  background-color: $main_Body_Bcg;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  font-family: $font_family;
+}
+body::-webkit-scrollbar {
+  width: 12px;
+}
+
+body::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+
+body::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+@mixin common_color_family {
+  font-family: inherit;
+  outline: none;
+  color: $btn_color;
+}
+
+@mixin default_layout {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+}
+@mixin font_layout($clr, $hvr) {
+  color: $clr;
+  font-size: 2rem;
+  &:hover {
+    color: $hvr;
+  }
+}
