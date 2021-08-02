@@ -1,4 +1,4 @@
-export default (function () {
+(function () {
   let userList = {
     enum: {
       base_url: "https://5dc588200bbd050014fb8ae1.mockapi.io/assessment",
