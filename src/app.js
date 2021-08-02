@@ -24,11 +24,7 @@ export default (function () {
         );
         return item;
       });
-      data.sort((a, b) => {
-        let sort = 0;
-        sort = a.name < b.name ? -1 : 1;
-        return sort;
-      });
+     data.sort((a, b) => (a.name < b.name ? -1 : 1));
       let complieData = template(data);
       document.getElementById("main").innerHTML = complieData;
     },
