@@ -18,7 +18,6 @@ export default (function () {
       let template = Handlebars.compile(mainTemplateHTML);
 
       data.map((item) => {
-        item.img = "https://picsum.photos/200/300";
         item.createdOn = new Date(item.createdAt).toLocaleDateString(
           "en-US",
           this.enum.date_options
